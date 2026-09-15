@@ -31,3 +31,11 @@ Before overwriting `GoArrow.dll` or `locations.xml` with a new version, rename y
 (`DDMMYY` = today's date, e.g. `150926` for 15 September 2026.)
 
 If the update causes problems, just rename the backup files back to their original names to restore the previous working version.
+## Playing on multiple servers
+
+If you also use GoArrow on other servers, include the server name in the backup filename so backups for different servers never overwrite each other:
+
+1. `GoArrow.dll` → `Backup_<ServerName>_DDMMYY_GoArrow.dll` (e.g. `Backup_DreamWeave_150926_GoArrow.dll`)
+2. `locations.xml` → `Backup_<ServerName>_DDMMYY_locations.xml`
+
+Keep each server's backup in its own subfolder (e.g. a `<ServerName> backup` folder) so switching between servers is just a matter of copying in the right backup, without risking overwriting or losing another server's working build.
